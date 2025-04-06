@@ -150,7 +150,83 @@ async function initProject(options = {}) {
     fs.mkdirSync(publicDir);
     fs.writeFileSync(
       path.join(publicDir, "index.html"),
-      `<html><body><h1>Pulumi is awesome broo!🔥</h1></body></html>`
+      `<!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Statik Deployment</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+          }
+          h1 {
+            font-size: 3rem;
+            animation: slideIn 1s ease-out forwards;
+          }
+          p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            animation: fadeIn 2s ease-out forwards;
+          }
+          .btn {
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            background: #00c6ff;
+            color: #000;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            animation: fadeIn 3s ease-out forwards;
+          }
+          .btn:hover {
+            background: #0072ff;
+            color: #fff;
+          }
+          @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          .glow {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05), transparent);
+            animation: pulse 3s infinite;
+            z-index: -1;
+          }
+          @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.6; }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="glow"></div>
+        <h1> 🔥Pulumi is awesome broo!🔥</h1>
+      </body>
+      </html>`
     );
     console.log("🌐 Created sample static site in ./public/");
   }
