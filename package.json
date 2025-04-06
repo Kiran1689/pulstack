@@ -1,0 +1,22 @@
+{
+  "name": "pulstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@pulumi/aws": "^6.75.0",
+    "@pulumi/awsx": "^2.21.1",
+    "@pulumi/github": "^6.7.0",
+    "@pulumi/pulumi": "^3.160.0",
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7",
+    "prompts": "^2.4.2",
+    "simple-git": "^3.27.0"
+  }
+}
