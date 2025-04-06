@@ -73,6 +73,7 @@ async function deployGithub() {
   console.log("📤 Pushing site content to `gh-pages` branch...");
   const git = simpleGit(deployDir);
   await git.init();
+  await git.checkoutLocalBranch("gh-pages"); // ✅ Create gh-pages branch
   await git.add(".");
   await git.commit("Deploy to GitHub Pages from statik");
 
