@@ -43,7 +43,7 @@ function createPulumiProgram(staticDir) {
       const filePath = path.join(staticDir, file);
       const contentType = getMimeType(file);
 
-      new aws.s3.BucketObject(`object-${file}`, {
+      new aws.s3.BucketObject(file, {
         bucket: siteBucket,
         source: new pulumi.asset.FileAsset(filePath),
         contentType,
@@ -65,7 +65,7 @@ function createPulumiProgram(staticDir) {
           let itemPath = prefix ? path.join(prefix, item) : item;
           itemPath = itemPath.replace(/\\/g,'/');             // convert Windows paths to something S3 will recognize
       
-          let object = new aws.s3.BucketObject(`object-${itemPath}`, {
+          let object = new aws.s3.BucketObject(itemPath, {
             bucket: siteBucket.id,
             source: new pulumi.asset.FileAsset(filePath),     // use FileAsset to point to a file
             contentType: getMimeType(filePath), // set the MIME type of the file
