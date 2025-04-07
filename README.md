@@ -23,11 +23,11 @@
 
 ### 📦 Prerequisites
 Before using pulstack, make sure you have the following installed and configured:
-1.  Node.js
+#### 1.  Node.js
    ```bash
    node -v
    ```
-2. Pulumi
+#### 2. Pulumi
 Install it from [https://www.pulumi.com/docs/install/](https://www.pulumi.com/docs/install/)
 
 ```bash
@@ -36,8 +36,9 @@ pulumi login
 ```
 > You'll need to log in to Pulumi
 
-3. AWS CLI
+#### 3. AWS CLI
 (for S3/CloudFront deployments only, You can skip this if you want to deploy on GitHub)
+
 Install and configure your credentials:
 ```bash
 aws configure
@@ -63,8 +64,9 @@ Make sure the IAM user has the necessary permissions
 - `logs:*` – For any logging resources created by Pulumi or AWS services.
 - `sts:GetCallerIdentity` – Used by Pulumi to identify the active IAM user.
 
-4. GitHub Token
+#### 4. GitHub Token
 (for GitHub Pages only, You can skip this if you want to deploy on AWS S3)
+
 Create a Personal Access Token(Classic) with `repo` and `delete` permission enabled.
 
 ## 🚀 Quick Start
