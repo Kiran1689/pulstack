@@ -36,7 +36,8 @@ pulumi login
 ```
 > You'll need to log in to Pulumi
 
-3. AWS CLI (for S3/CloudFront deployments)
+3. AWS CLI
+(for S3/CloudFront deployments only, You can skip this if you want to deploy on GitHub)
 Install and configure your credentials:
 ```bash
 aws configure
@@ -62,8 +63,9 @@ Make sure the IAM user has the necessary permissions
 - `logs:*` – For any logging resources created by Pulumi or AWS services.
 - `sts:GetCallerIdentity` – Used by Pulumi to identify the active IAM user.
 
-4. GitHub Token (for GitHub Pages)
-Create a Personal Access Token with `repo` and `delete` permission enabled.
+4. GitHub Token
+(for GitHub Pages only, You can skip this if you want to deploy on AWS S3)
+Create a Personal Access Token(Classic) with `repo` and `delete` permission enabled.
 
 ## 🚀 Quick Start
 
