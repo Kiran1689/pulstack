@@ -84,12 +84,17 @@ Create a Personal Access Token(Classic) with `repo` and `delete` permission enab
 
 > 💡 This structure is generated or expected after running node index.js init. You can edit it or extend it to suit your own needs.
 
-1. Install dependencies
+1. Clone this Repo
+```bash
+git clone https://github.com/Kiran1689/pulstack.git
+```
+
+2. Install dependencies
 ```bash
 npm install
 ```
 
-2. Initialize project
+3. Initialize project
 
 - If you want to deploy your site on AWS S3:
   ```bash
@@ -103,7 +108,7 @@ npm install
   ```
   Follow the prompts on CLI and provide Repo name, stack name, GitHub Personal Access Token
 
-3. Deploy
+4. Deploy
 
    - If you want to deploy your site on AWS S3:
     ```bash
@@ -118,7 +123,8 @@ npm install
     ```
     After running this command you will get your live site URL.
 > [!NOTE]
-> You can change the `directory name` according to your project. e.g If react project, pass `./build` folder
+> You can change the `directory name` according to your project. e.g If react project, pass `./build` folder.
+> If you haven't opted for creating a sample index.html file during init, you should paste your static files folder to this cloned repo.
 
 4. Destroy
 To destroy the stack run:
