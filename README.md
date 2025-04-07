@@ -1,6 +1,13 @@
-## ⚡ pulstack – Instant Static Site Deployment with Pulumi
+## ⚡ Pulstack – Instant Static Site Deployment with Pulumi
 
 `pulstack` is a developer-friendly tool that lets you deploy static websites to AWS (S3 + CloudFront) or GitHub Pages with zero configuraton. It uses [Pulumi](https://www.pulumi.com/) under the hood to treat infrastructure as code, so your deployments are fully automated and version-controlled.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/built%20with-pulumi-purple?logo=pulumi" alt="Pulumi Badge">
+  <img src="https://img.shields.io/badge/deploys%20to-aws-orange?logo=amazonaws" alt="AWS Badge">
+  <img src="https://img.shields.io/badge/deploys%20to-github%20pages-blue?logo=github" alt="GitHub Pages Badge">
+</p>
+
 
 ### ✨ Features
 
@@ -60,6 +67,21 @@ Create a Personal Access Token with `repo` and `delete` permission enabled.
 
 ## 🚀 Quick Start
 
+### 📁 Project Structure
+```
+.
+├── index.js              # Entry CLI to handle commands
+├── deploy.js             # AWS S3 + CloudFront deployment logic
+├── deployGithub.js       # GitHub Pages deployment logic with Pulumi
+├── destroy.js            # Stack destroy logic
+├── pulumiProgram.js      # Defines AWS infra using Pulumi
+├── config.json           # User config file generated at init
+├── public/               # Your static site directory (e.g. index.html, assets)
+├── init.js               # The init logics
+```
+
+> 💡 This structure is generated or expected after running node index.js init. You can edit it or extend it to suit your own needs.
+
 1. Install dependencies
 ```bash
 npm install
@@ -117,4 +139,16 @@ node index.js destroy
 ## 🙌 Credits
 Inspired by the power of Pulumi and the simplicity of static hosting.
 Feel free to fork, extend, and customize!
+
+## 🤝 Contributing
+Contributions, issues and feature requests are welcome!
+Feel free to check [issues page](../../issues).
+
+## 💬 Need Help?
+Open an issue or start a discussion. Let's build better deployments together with pulumi.
+
+
+## 🪪 License
+This project is licensed under the [MIT License](./LICENSE).
+
     
