@@ -36,7 +36,7 @@ function createPulumiProgram(staticDir) {
     const oai = new aws.cloudfront.OriginAccessIdentity("pulumi-oai", {
         comment: `Access Identity for ${bucketName}`,
       });
-
+    {/*
     // Upload files from the staticDir
     const files = fs.readdirSync(staticDir);
     for (const file of files) {
@@ -49,7 +49,7 @@ function createPulumiProgram(staticDir) {
         contentType,
       });
     }
-
+    */}
     const addFolderContents = (staticDir, prefix) => {
         for (let item of fs.readdirSync(staticDir)) {
           let filePath = path.join(staticDir, item);
@@ -73,7 +73,7 @@ function createPulumiProgram(staticDir) {
         }
     }
       
-    
+    addFolderContents(staticDir);
     
     // Attach bucket policy for OAI
     new aws.s3.BucketPolicy("pulumi-bucket-policy", {
@@ -92,7 +92,7 @@ function createPulumiProgram(staticDir) {
           })
         ),
       });
-  
+    {/*
       // Upload static files
       const uploadFiles = (dir, prefix = "") => {
         for (const item of fs.readdirSync(dir)) {
@@ -114,7 +114,8 @@ function createPulumiProgram(staticDir) {
       };
   
       uploadFiles(staticDir);
-  
+      */}
+    
       // CloudFront Distribution
       const distribution = new aws.cloudfront.Distribution("pulumi-cdn", {
         enabled: true,
